@@ -1,0 +1,20 @@
+h1 {
+  color: #f04e2f;
+  font-weight: bold;
+}
+
+#row1 {
+  font-weight: bold;
+}
+
+#row2 {
+  font-weight: bold;
+}
+
+button {
+  background-color: #f04e2f;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
