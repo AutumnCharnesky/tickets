@@ -18,3 +18,7 @@ button {
   font-weight: bold;
   color: white;
 }
+
+.submitButton {
+  margin-left: 33%;
+}

@@ -12,43 +12,50 @@
         <!-- Our CSS -->
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body ng-app="ticketKiosk">
+    <body ng-app="ticketKiosk" ng-controller="kioskController">
 
       <div class="container">
+        <div class="col-lg-9">
+          <div class="row row-centered">
+            <div class="col-lg-12"><h1 class="text-left">Ticket Kiosk</h1></div>
+          </div>
 
-        <div class="row row-centered">
-          <div class="col-lg-6"><h1 class="text-left">Ticket Kiosk</h1></div>
-          <div class="col-lg-6"><h1 class="text-right">News Feed</h1></div>
+          <div class="row row-centered" id="row1">
+            <div class="col-lg-4"><p class="text-left">Name:</div>
+            <div class="col-lg-4"><input type="text" ng-model="order.name"></div>
+          </div>
+
+          <div class="row row-centered" id="row2">
+            <div class="col-lg-4"><p class="text-left"># of Tickets:<p></div>
+            <div class="col-lg-4"><input type="number" ng-init="order.ticketNum = 1" ng-model="order.ticketNum"></div>
+          </div>
+
+          <div class="row row-centered" id="row3">
+            <div class="col-lg-4"><p class="text-left">Price:</div>
+            <div class="col-lg-4"><strong>$2.50</strong></div>
+          </div>
+
+          <div class="row row-centered" id="row4">
+            <div class="col-lg-4"><p class="text-left">Total:</div>
+            <div class="col-lg-4"><strong>{{order.ticketNum * 2.50 | currency}}</strong></div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12"><button class="submitButton" type="button" ng-click="purchase(order)">Buy</button></div>
+          </div>
+
         </div>
 
-        <div class="row row-centered" id="row1">
-          <div class="col-lg-4"><p class="text-left">Name:</div>
-          <div class="col-lg-4"><center><input type="name"></center></div>
-          <div class="col-lg-4"><p class="text-right">filler</div>
-        </div>
+        <div class="col-lg-3">
+          <div class="row row-centered">
+            <div class="col-lg-12"><h1 class="text-right">News Feed</h1></div>
+          </div>
 
-        <div class="row row-centered" id="row2">
-          <div class="col-lg-4"><p class="text-left"># of Tickets:<p></div>
-          <div class="col-lg-4"><center><input type="number"></center></div>
-          <div class="col-lg-4"><p class="text-right"></div>
+          <div class="col-lg-12">
+            <div class="col-lg-4"><p class="text-right"><p ng-repeat="news in purchaser">{{news}}</p>
+            </div>
         </div>
-
-        <div class="row row-centered" id="row3">
-          <div class="col-lg-4"><p class="text-left">Price:</div>
-          <div class="col-lg-4"><center><strong>$2.50</strong></center></div>
-          <div class="col-lg-4"><p class="text-right"></div>
         </div>
-
-        <div class="row row-centered" id="row4">
-          <div class="col-lg-4"><p class="text-left">Total:</div>
-          <div class="col-lg-4"><center></center></div>
-          <div class="col-lg-4"><p class="text-right"></div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12"><center><button class="submitButton" onclick"">Buy</button</center></div>
-        </div>
-
       </div>
 
         <!-- Invlude Angular and UI.Bootstrap -->
